@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 
 export default function FrogPage() {
   const { name } = useParams()
+  console.log({ name })
 
   if (!name) {
     throw new Error('Missing param "name"')

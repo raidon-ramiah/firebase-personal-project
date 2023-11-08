@@ -1,13 +1,14 @@
 import * as Path from 'node:path'
 import express from 'express'
 import cors, { CorsOptions } from 'cors'
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 const server = express()
 
 server.get('/api/v1/greeting', (req, res) => {
-  const greetings = ['hola', 'hi', 'hello', 'howdy']
+  const greetings = ['hola', 'hi', 'hello', 'howdy', 'kia ora', 'konnichiwa']
   const index = Math.floor(Math.random() * greetings.length)
-  console.log(index)
   res.json({ greeting: greetings[index] })
 })
 
